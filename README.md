@@ -1,3 +1,4 @@
 # gitcoin-polkadot
 ## Gitcoin Polkadot Hackathon
-## Look branches
+### [BEGINNER CHALLENGE] Run A Private Substrate Network
+![Screenshot](2.PNG)
