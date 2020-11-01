@@ -1,3 +1,4 @@
 # gitcoin-polkadot
 ## Gitcoin Polkadot Hackathon
-## Look branches
+### [BEGINNER CHALLENGE] Launch A Local Substrate Development Chain
+![Screenshot](1.PNG)
