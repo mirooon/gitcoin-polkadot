@@ -64,6 +64,9 @@ function Main () {
             <BlockNumber finalized />
           </Grid.Row>
           <Grid.Row stretched>
+            <BlockDetails/>
+          </Grid.Row>
+          <Grid.Row stretched>
             <Balances />
           </Grid.Row>
           <Grid.Row>
