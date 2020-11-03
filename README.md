@@ -1,5 +1,7 @@
 # gitcoin-polkadot
 ## Gitcoin Polkadot Hackathon
+
+### LIVE VERSION: https://nostalgic-kilby-dea243.netlify.app/
 ### [BEGINNER CHALLENGES] Front-End Javascript
 ![Screenshot](3.PNG)
 
@@ -14,4 +16,4 @@ yarn install
 ```
 
 ## Added components
-I have added BlockDetails component which is connected with main app component.
+I have added BlockDetails component which is using api.rpc.chain.subscribeNewHeads function.
