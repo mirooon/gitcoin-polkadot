@@ -16,7 +16,6 @@ import NodeInfo from './NodeInfo';
 import TemplateModule from './TemplateModule';
 import Transfer from './Transfer';
 import Upgrade from './Upgrade';
-import Block from '@polkadot/types/generic/Block';
 
 function Main () {
   const [accountAddress, setAccountAddress] = useState(null);

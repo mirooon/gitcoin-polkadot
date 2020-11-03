@@ -24,7 +24,7 @@ export default function Main(props) {
       }
     };
     subscribeNewHeads().catch(console.error);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Grid.Column>
