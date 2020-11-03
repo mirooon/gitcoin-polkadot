@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'semantic-ui-react';
 import { web3FromSource } from '@polkadot/extension-dapp';
@@ -19,7 +19,6 @@ function TxButton ({
   // Hooks
   const { api } = useSubstrate();
   const [unsub, setUnsub] = useState(null);
-  const [sudoKey, setSudoKey] = useState(null);
 
   const { palletRpc, callable, inputParams, paramFields } = attrs;
 
@@ -30,16 +29,6 @@ function TxButton ({
   const isSigned = () => type === 'SIGNED-TX';
   const isRpc = () => type === 'RPC';
   const isConstant = () => type === 'CONSTANT';
-
-  const loadSudoKey = () => {
-    (async function () {
-      if (!api) { return; }
-      const sudoKey = await api.query.sudo.key();
-      sudoKey.isEmpty ? setSudoKey(null) : setSudoKey(sudoKey.toString());
-    })();
-  };
-
-  useEffect(loadSudoKey, [api]);
 
   const getFromAcct = async () => {
     const {
@@ -207,11 +196,6 @@ function TxButton ({
     });
   };
 
-  const isSudoer = acctPair => {
-    if (!sudoKey || !acctPair) { return false; }
-    return acctPair.address === sudoKey;
-  };
-
   return (
     <Button
       basic
@@ -220,7 +204,7 @@ function TxButton ({
       type='submit'
       onClick={transaction}
       disabled={ disabled || !palletRpc || !callable || !allParamsFilled() ||
-        ((isSudo() || isUncheckedSudo()) && !isSudoer(accountPair)) }
+        ((isSudo() || isUncheckedSudo())) }
     >
       {label}
     </Button>
